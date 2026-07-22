@@ -20,12 +20,15 @@ const DEFAULT_PORTFOLIO_DATA = {
     headline: "Senior Mobile Engineer • Flutter & Dart Specialist",
     statusBadge: "Available for Freelance & Full-time",
     bio: "Passionate Mobile Engineer from Malang, Indonesia with 3+ years of experience building high-performance cross-platform applications using Flutter, Clean Architecture, BLoC, and GetX.",
-    location: "Malang City, East Java, Indonesia",
+    bioP2: "From ride-hailing services like Okejek to enterprise Sales Force Automation (zestHub SFA) and official organization platforms like AyoPramuka Kwarnas, I turn Figma designs into pixel-perfect, high-performing code.",
+    location: "Malang, Indonesia",
     email: "adioktav1997@gmail.com",
     phone: "+6285171115997",
+    degree: "B.S. Informatics Engineering",
     experienceYears: "3+",
     appsShipped: "7+",
     cleanCode: "100%",
+    problemSolving: "24/7",
     socials: {
       github: "https://github.com/ricky-oktavio?tab=repositories",
       linkedin: "https://www.linkedin.com/in/ricky-oktavio-adi-pranata-b27aa61b8/",
@@ -529,12 +532,19 @@ export function renderProfileForm() {
   document.getElementById("prof-headline").value = p.headline || "";
   document.getElementById("prof-badge").value = p.statusBadge || "";
   document.getElementById("prof-bio").value = p.bio || "";
+  if (document.getElementById("prof-bio-p2")) document.getElementById("prof-bio-p2").value = p.bioP2 || "";
+  if (document.getElementById("prof-location")) document.getElementById("prof-location").value = p.location || "";
+  if (document.getElementById("prof-email")) document.getElementById("prof-email").value = p.email || "";
+  if (document.getElementById("prof-phone")) document.getElementById("prof-phone").value = p.phone || "";
+  if (document.getElementById("prof-degree")) document.getElementById("prof-degree").value = p.degree || "";
   document.getElementById("prof-exp-years").value = p.experienceYears || "";
   document.getElementById("prof-apps").value = p.appsShipped || "";
-  document.getElementById("prof-github").value = p.socials.github || "";
-  document.getElementById("prof-linkedin").value = p.socials.linkedin || "";
-  document.getElementById("prof-telegram").value = p.socials.telegram || "";
-  document.getElementById("prof-whatsapp").value = p.socials.whatsapp || "";
+  if (document.getElementById("prof-clean-code")) document.getElementById("prof-clean-code").value = p.cleanCode || "";
+  if (document.getElementById("prof-problem-solving")) document.getElementById("prof-problem-solving").value = p.problemSolving || "";
+  document.getElementById("prof-github").value = p.socials?.github || "";
+  document.getElementById("prof-linkedin").value = p.socials?.linkedin || "";
+  document.getElementById("prof-telegram").value = p.socials?.telegram || "";
+  document.getElementById("prof-whatsapp").value = p.socials?.whatsapp || "";
 }
 
 export function saveProfile(e) {
@@ -543,8 +553,17 @@ export function saveProfile(e) {
   store.data.profile.headline = document.getElementById("prof-headline").value;
   store.data.profile.statusBadge = document.getElementById("prof-badge").value;
   store.data.profile.bio = document.getElementById("prof-bio").value;
+  if (document.getElementById("prof-bio-p2")) store.data.profile.bioP2 = document.getElementById("prof-bio-p2").value;
+  if (document.getElementById("prof-location")) store.data.profile.location = document.getElementById("prof-location").value;
+  if (document.getElementById("prof-email")) store.data.profile.email = document.getElementById("prof-email").value;
+  if (document.getElementById("prof-phone")) store.data.profile.phone = document.getElementById("prof-phone").value;
+  if (document.getElementById("prof-degree")) store.data.profile.degree = document.getElementById("prof-degree").value;
   store.data.profile.experienceYears = document.getElementById("prof-exp-years").value;
   store.data.profile.appsShipped = document.getElementById("prof-apps").value;
+  if (document.getElementById("prof-clean-code")) store.data.profile.cleanCode = document.getElementById("prof-clean-code").value;
+  if (document.getElementById("prof-problem-solving")) store.data.profile.problemSolving = document.getElementById("prof-problem-solving").value;
+
+  if (!store.data.profile.socials) store.data.profile.socials = {};
   store.data.profile.socials.github = document.getElementById("prof-github").value;
   store.data.profile.socials.linkedin = document.getElementById("prof-linkedin").value;
   store.data.profile.socials.telegram = document.getElementById("prof-telegram").value;
