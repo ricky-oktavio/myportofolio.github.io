@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Admin Dashboard & CMS — Ricky Oktavio Portfolio</title>
+  <meta content="Admin CMS Dashboard for managing portfolio data" name="description">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header / Navbar ======= -->
+  <header id="header" class="header-scrolled">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-brand">
+        <img src="assets/img/ric.jpg" alt="Ricky Oktavio" class="logo-avatar">
+        <span>Admin CMS Dashboard</span>
+      </a>
+
+      <div class="d-flex align-items-center gap-3">
+        <span class="badge-mode firebase"><i class="bi bi-fire"></i> Firebase Connected (my-portofolio-3cdc1)</span>
+        <div id="admin-user-info" style="display: none;" class="align-items-center gap-2">
+          <span class="badge bg-secondary" id="user-email-badge">admin@firebase.com</span>
+          <button class="btn-glass py-1 px-3" onclick="handleAdminLogout()" style="font-size: 0.8rem;"><i class="bi bi-box-arrow-right me-1"></i> Logout</button>
+        </div>
+        <a href="index.html" class="btn-glass" style="padding: 0.4rem 1rem; font-size: 0.85rem;"><i class="bi bi-box-arrow-up-right me-1"></i> View Live Site</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======= LOGIN SCREEN (For Unauthenticated Users) ======= -->
+  <div id="admin-login-screen" class="container" style="padding-top: 10rem; padding-bottom: 5rem;">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="glass-card text-center p-4 p-md-5">
+          <div class="mb-4">
+            <div class="d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 rounded-circle mb-3" style="width: 70px; height: 70px;">
+              <i class="bi bi-shield-lock-fill text-info fs-1"></i>
+            </div>
+            <h3 class="fw-bold m-0">Admin Authentication</h3>
+            <p class="text-muted small mt-1">Sign in with your Firebase Auth Account to manage portfolio content</p>
+          </div>
+
+          <div id="login-error-alert" class="alert alert-danger py-2 small" style="display: none;"></div>
+
+          <form id="form-admin-login" onsubmit="handleAdminLogin(event)">
+            <div class="form-group text-start mb-3">
+              <label>Firebase Email Address</label>
+              <input type="email" id="login-email" class="form-control-glass" placeholder="admin@example.com" required>
+            </div>
+
+            <div class="form-group text-start mb-4">
+              <label>Password</label>
+              <input type="password" id="login-password" class="form-control-glass" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" id="btn-login-submit" class="btn-gradient w-100 justify-content-center py-2">
+              <i class="bi bi-box-arrow-in-right me-1"></i> Sign In to Dashboard
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Admin Layout (Protected Content) ======= -->
+  <div id="admin-dashboard-container" class="container-fluid p-0" style="display: none;">
+    <div class="admin-layout">
+      
+      <!-- Sidebar Navigation -->
+      <aside class="admin-sidebar-nav">
+        <button class="admin-nav-btn active" data-tab="tab-projects">
+          <i class="bi bi-box-seam fs-5"></i>
+          <span>Projects CRUD</span>
+        </button>
+
+        <button class="admin-nav-btn" data-tab="tab-experience">
+          <i class="bi bi-briefcase fs-5"></i>
+          <span>Experience CRUD</span>
+        </button>
+
+        <button class="admin-nav-btn" data-tab="tab-skills">
+          <i class="bi bi-cpu fs-5"></i>
+          <span>Tech Stack CRUD</span>
+        </button>
+
+        <button class="admin-nav-btn" data-tab="tab-profile">
+          <i class="bi bi-person-gear fs-5"></i>
+          <span>Profile Settings</span>
+        </button>
+
+        <button class="admin-nav-btn" data-tab="tab-firebase">
+          <i class="bi bi-fire fs-5 text-warning"></i>
+          <span>Firebase & Backup</span>
+        </button>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="admin-main-content">
+        
+        <!-- Summary Stats Header -->
+        <div class="row gy-3 mb-4">
+          <div class="col-md-3">
+            <div class="glass-card text-center p-3">
+              <div class="fs-3 fw-bold text-info" id="count-projects">0</div>
+              <div class="small text-muted">Total Projects</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="glass-card text-center p-3">
+              <div class="fs-3 fw-bold text-warning" id="count-experience">0</div>
+              <div class="small text-muted">Work Experiences</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="glass-card text-center p-3">
+              <div class="fs-3 fw-bold text-success" id="count-skills">0</div>
+              <div class="small text-muted">Tech Skills</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="glass-card text-center p-3">
+              <div class="fs-3 fw-bold text-primary"><i class="bi bi-cloud-check"></i> Sync</div>
+              <div class="small text-muted">LocalStorage / Firebase</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 1: PROJECTS -->
+        <section id="tab-projects" class="admin-tab-section">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h3 class="m-0">Portfolio Projects</h3>
+              <p class="text-muted small">Manage portfolio items, images, categories, and tags</p>
+            </div>
+            <button class="btn-gradient" onclick="openProjectModal()"><i class="bi bi-plus-lg me-1"></i> Add Project</button>
+          </div>
+
+          <div class="glass-card p-0 overflow-hidden">
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Preview</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Tags</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="projects-tbody">
+                  <!-- Rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 2: EXPERIENCE -->
+        <section id="tab-experience" class="admin-tab-section" style="display: none;">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h3 class="m-0">Work Experience Timeline</h3>
+              <p class="text-muted small">Manage career positions, dates, and responsibilities</p>
+            </div>
+            <button class="btn-gradient" onclick="openExpModal()"><i class="bi bi-plus-lg me-1"></i> Add Experience</button>
+          </div>
+
+          <div class="glass-card p-0 overflow-hidden">
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Role</th>
+                    <th>Company</th>
+                    <th>Period</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="experience-tbody">
+                  <!-- Rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 3: TECH STACK -->
+        <section id="tab-skills" class="admin-tab-section" style="display: none;">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h3 class="m-0">Tech Stack & Skills</h3>
+              <p class="text-muted small">Manage skills, framework badges, and descriptions</p>
+            </div>
+            <button class="btn-gradient" onclick="openSkillModal()"><i class="bi bi-plus-lg me-1"></i> Add Skill</button>
+          </div>
+
+          <div class="glass-card p-0 overflow-hidden">
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Icon</th>
+                    <th>Skill Name</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="skills-tbody">
+                  <!-- Rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 4: PROFILE SETTINGS -->
+        <section id="tab-profile" class="admin-tab-section" style="display: none;">
+          <div class="mb-3">
+            <h3 class="m-0">Profile & Hero Settings</h3>
+            <p class="text-muted small">Update your personal details, bio, and social links</p>
+          </div>
+
+          <div class="glass-card">
+            <form onsubmit="saveProfile(event)">
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="prof-name" class="form-control-glass" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Headline / Title</label>
+                    <input type="text" id="prof-headline" class="form-control-glass" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Status Badge</label>
+                    <input type="text" id="prof-badge" class="form-control-glass" required>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>Years Experience</label>
+                    <input type="text" id="prof-exp-years" class="form-control-glass" required>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>Apps Shipped</label>
+                    <input type="text" id="prof-apps" class="form-control-glass" required>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label>Bio Summary</label>
+                    <textarea id="prof-bio" class="form-control-glass" rows="3" required></textarea>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>GitHub URL</label>
+                    <input type="text" id="prof-github" class="form-control-glass">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>LinkedIn URL</label>
+                    <input type="text" id="prof-linkedin" class="form-control-glass">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Telegram URL</label>
+                    <input type="text" id="prof-telegram" class="form-control-glass">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>WhatsApp URL</label>
+                    <input type="text" id="prof-whatsapp" class="form-control-glass">
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <button type="submit" class="btn-gradient"><i class="bi bi-check-lg me-1"></i> Save Profile Settings</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- TAB 5: FIREBASE CONFIG & BACKUP -->
+        <section id="tab-firebase" class="admin-tab-section" style="display: none;">
+          <div class="mb-3">
+            <h3 class="m-0">Firebase Firestore Integration & Data Backup</h3>
+            <p class="text-muted small">Configure Firebase Credentials or Export/Import JSON data</p>
+          </div>
+
+          <div class="glass-card mb-4">
+            <h4 class="text-warning mb-3"><i class="bi bi-fire me-2"></i>Firebase Configuration</h4>
+            <form onsubmit="saveFirebaseConfig(event)">
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>API Key</label>
+                    <input type="text" id="fb-apikey" class="form-control-glass" placeholder="AIzaSy...">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Auth Domain</label>
+                    <input type="text" id="fb-authdomain" class="form-control-glass" placeholder="project-id.firebaseapp.com">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Project ID</label>
+                    <input type="text" id="fb-projectid" class="form-control-glass" placeholder="my-portfolio-id">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>App ID</label>
+                    <input type="text" id="fb-appid" class="form-control-glass" placeholder="1:123456:web:abcd">
+                  </div>
+                </div>
+              </div>
+              <div class="mt-3 d-flex gap-2">
+                <button type="button" class="btn-gradient" onclick="syncToFirebase()"><i class="bi bi-cloud-upload-fill me-1"></i> Sync All Data to Firebase Firestore</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="glass-card">
+            <h4 class="mb-3"><i class="bi bi-download me-2"></i>Export & Reset Data</h4>
+            <div class="d-flex flex-wrap gap-3">
+              <button class="btn-glass" onclick="exportJSON()"><i class="bi bi-file-earmark-arrow-down me-1"></i> Export Data (JSON)</button>
+              <button class="btn-glass text-danger border-danger" onclick="resetAllData()"><i class="bi bi-arrow-counterclockwise me-1"></i> Reset to Default</button>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ======= MODALS ======= -->
+
+  <!-- Modal 1: Project Modal -->
+  <div class="modal-overlay" id="modal-project">
+    <div class="modal-glass-card">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="m-0">Project Details</h4>
+        <button class="btn-icon-action" onclick="closeModal('modal-project')"><i class="bi bi-x-lg"></i></button>
+      </div>
+
+      <form id="form-project" onsubmit="saveProject(event)">
+        <input type="hidden" id="proj-id">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" id="proj-title" class="form-control-glass" required>
+        </div>
+        <div class="form-group">
+          <label>Category (filter-app, filter-web, etc.)</label>
+          <input type="text" id="proj-category" class="form-control-glass" placeholder="filter-app" required>
+        </div>
+        <div class="form-group">
+          <label>Image Path / URL</label>
+          <input type="text" id="proj-image" class="form-control-glass" placeholder="assets/img/portfolio/my/okjek.png" required>
+        </div>
+        <div class="form-group">
+          <label>Tags (Comma separated)</label>
+          <input type="text" id="proj-tags" class="form-control-glass" placeholder="Flutter, GetX, REST API" required>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="proj-description" class="form-control-glass" rows="2" required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Play Store URL</label>
+          <input type="text" id="proj-playstore" class="form-control-glass">
+        </div>
+        <div class="form-group">
+          <label>GitHub URL</label>
+          <input type="text" id="proj-github" class="form-control-glass">
+        </div>
+        <div class="mt-4 d-flex justify-content-end gap-2">
+          <button type="button" class="btn-glass" onclick="closeModal('modal-project')">Cancel</button>
+          <button type="submit" class="btn-gradient">Save Project</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 2: Experience Modal -->
+  <div class="modal-overlay" id="modal-exp">
+    <div class="modal-glass-card">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="m-0">Experience Details</h4>
+        <button class="btn-icon-action" onclick="closeModal('modal-exp')"><i class="bi bi-x-lg"></i></button>
+      </div>
+
+      <form id="form-exp" onsubmit="saveExperience(event)">
+        <input type="hidden" id="exp-id">
+        <div class="form-group">
+          <label>Role / Position</label>
+          <input type="text" id="exp-role" class="form-control-glass" required>
+        </div>
+        <div class="form-group">
+          <label>Company Name</label>
+          <input type="text" id="exp-company" class="form-control-glass" required>
+        </div>
+        <div class="form-group">
+          <label>Location</label>
+          <input type="text" id="exp-location" class="form-control-glass" required>
+        </div>
+        <div class="form-group">
+          <label>Period (Dates)</label>
+          <input type="text" id="exp-period" class="form-control-glass" placeholder="August 2024 - Present" required>
+        </div>
+        <div class="form-group">
+          <label>Responsibilities (One per line)</label>
+          <textarea id="exp-bullets" class="form-control-glass" rows="4" required></textarea>
+        </div>
+        <div class="mt-4 d-flex justify-content-end gap-2">
+          <button type="button" class="btn-glass" onclick="closeModal('modal-exp')">Cancel</button>
+          <button type="submit" class="btn-gradient">Save Experience</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 3: Skill Modal -->
+  <div class="modal-overlay" id="modal-skill">
+    <div class="modal-glass-card">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="m-0">Skill Details</h4>
+        <button class="btn-icon-action" onclick="closeModal('modal-skill')"><i class="bi bi-x-lg"></i></button>
+      </div>
+
+      <form id="form-skill" onsubmit="saveSkill(event)">
+        <input type="hidden" id="sk-id">
+        <div class="form-group">
+          <label>Skill Name</label>
+          <input type="text" id="sk-name" class="form-control-glass" required>
+        </div>
+        <div class="form-group">
+          <label>Bootstrap Icon Class (e.g., bi bi-phone)</label>
+          <input type="text" id="sk-icon" class="form-control-glass" placeholder="bi bi-phone" required>
+        </div>
+        <div class="form-group">
+          <label>Subtext / Description</label>
+          <input type="text" id="sk-subtext" class="form-control-glass" required>
+        </div>
+        <div class="mt-4 d-flex justify-content-end gap-2">
+          <button type="button" class="btn-glass" onclick="closeModal('modal-skill')">Cancel</button>
+          <button type="submit" class="btn-gradient">Save Skill</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin JS Controller (ES Module for Firebase SDK) -->
+  <script type="module" src="assets/js/admin.js"></script>
+</body>
+
+</html>
