@@ -323,6 +323,8 @@ export function renderProjects() {
 export function openProjectModal(id = null) {
   const modal = document.getElementById("modal-project");
   const form = document.getElementById("form-project");
+  const previewContainer = document.getElementById("proj-image-preview");
+  const previewImg = document.getElementById("img-preview-src");
 
   if (id) {
     const item = store.data.projects.find(p => p.id === id);
@@ -334,13 +336,47 @@ export function openProjectModal(id = null) {
     document.getElementById("proj-tags").value = item.tags.join(", ");
     document.getElementById("proj-playstore").value = item.playstore || "";
     document.getElementById("proj-github").value = item.github || "";
+
+    if (item.image && previewContainer && previewImg) {
+      previewImg.src = item.image;
+      previewContainer.style.display = "block";
+    } else if (previewContainer) {
+      previewContainer.style.display = "none";
+    }
   } else {
     form.reset();
     document.getElementById("proj-id").value = "";
+    if (previewContainer) previewContainer.style.display = "none";
   }
 
   modal.classList.add("active");
 }
+
+export function handleImageFileUpload(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  if (file.size > 3 * 1024 * 1024) {
+    alert("Image file size is too large. Please select an image under 3MB.");
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function(evt) {
+    const base64Data = evt.target.result;
+    document.getElementById("proj-image").value = base64Data;
+    
+    const previewContainer = document.getElementById("proj-image-preview");
+    const previewImg = document.getElementById("img-preview-src");
+    if (previewContainer && previewImg) {
+      previewImg.src = base64Data;
+      previewContainer.style.display = "block";
+    }
+  };
+  reader.readAsDataURL(file);
+}
+
+window.handleImageFileUpload = handleImageFileUpload;
 
 export function saveProject(e) {
   e.preventDefault();

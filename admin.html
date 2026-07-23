@@ -427,8 +427,17 @@
           <input type="text" id="proj-category" class="form-control-glass" placeholder="filter-app" required>
         </div>
         <div class="form-group">
-          <label>Image Path / URL</label>
-          <input type="text" id="proj-image" class="form-control-glass" placeholder="assets/img/portfolio/my/okjek.png" required>
+          <label>Image Path / URL or Upload File</label>
+          <div class="d-flex gap-2">
+            <input type="text" id="proj-image" class="form-control-glass" placeholder="assets/img/portfolio/my/okjek.png" required>
+            <label class="btn-glass text-nowrap d-flex align-items-center cursor-pointer m-0" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+              <i class="bi bi-cloud-upload me-1"></i> Upload
+              <input type="file" id="proj-file" accept="image/*" style="display: none;" onchange="handleImageFileUpload(event)">
+            </label>
+          </div>
+          <div id="proj-image-preview" class="mt-2" style="display: none;">
+            <img id="img-preview-src" src="" alt="Image Preview" style="max-height: 100px; border-radius: 8px; border: 1px solid var(--glass-border);">
+          </div>
         </div>
         <div class="form-group">
           <label>Tags (Comma separated)</label>
