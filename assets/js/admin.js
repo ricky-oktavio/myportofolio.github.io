@@ -19,16 +19,14 @@ const DEFAULT_PORTFOLIO_DATA = {
     fullName: "Ricky Oktavio Adi Pranata",
     headline: "Senior Mobile Engineer • Flutter & Dart Specialist",
     statusBadge: "Available for Freelance & Full-time",
-    bio: "Passionate Mobile Engineer from Malang, Indonesia with 3+ years of experience building high-performance cross-platform applications using Flutter, Clean Architecture, BLoC, and GetX.",
-    bioP2: "From ride-hailing services like Okejek to enterprise Sales Force Automation (zestHub SFA) and official organization platforms like AyoPramuka Kwarnas, I turn Figma designs into pixel-perfect, high-performing code.",
+    bio: "Mobile engineer in Malang, Indonesia. I've built Flutter apps for iOS and Android since 2020, using Clean Architecture with BLoC and GetX.",
+    bioP2: "From ride-hailing services like Okejek to enterprise Sales Force Automation (zestHub SFA) and official organization platforms like AyoPramuka Kwarnas, I turn Figma designs into Flutter code.",
     location: "Malang, Indonesia",
     email: "adioktav1997@gmail.com",
     phone: "+6285171115997",
     degree: "B.S. Informatics Engineering",
-    experienceYears: "3+",
-    appsShipped: "7+",
-    cleanCode: "100%",
-    problemSolving: "24/7",
+    experienceYears: "6+",
+    appsShipped: "9",
     socials: {
       github: "https://github.com/ricky-oktavio?tab=repositories",
       linkedin: "https://www.linkedin.com/in/ricky-oktavio-adi-pranata-b27aa61b8/",
@@ -38,33 +36,114 @@ const DEFAULT_PORTFOLIO_DATA = {
   },
   projects: [
     {
-      id: "proj-1",
-      title: "Okejek App",
-      description: "Online transportation, delivery, and digital services platform.",
-      category: "filter-app",
-      image: "assets/img/portfolio/my/okjek.png",
-      tags: ["Flutter", "GetX", "REST API", "Maps"],
-      playstore: "https://play.google.com/store/apps/details?id=id.okejack.okejackapp&hl=in&gl=US",
+      id: "proj-13",
+      title: "YAY TOP UP",
+      description: "Game coin and e-wallet top-up platform with automatic delivery in seconds, QRIS and virtual account payments via LinkQu, and an affiliate program. Built for a client through Slaza Technology.",
+      category: "filter-web",
+      image: "assets/img/portfolio/my/yaytopup-cover.jpg",
+      tags: ["Vue 3", "NestJS", "PostgreSQL", "DevOps"],
+      website: "https://yaytopup.id",
+      playstore: "",
+      appstore: "",
       github: ""
     },
     {
-      id: "proj-2",
-      title: "zestHub SFA",
-      description: "Sales Force Automation system for Sinarmas Distribusi Nusantara (SDN).",
+      id: "proj-7",
+      title: "AyoMuslim",
+      description: "Worship and community app: location-based prayer times, the Qur'an with 40+ reciters, daily du'a, dhikr and habit tracking.",
       category: "filter-app",
-      image: "assets/img/portfolio/my/sfa.png",
-      tags: ["Flutter", "Clean Arch", "BLoC", "Enterprise"],
-      playstore: "https://play.google.com/store/apps/details?id=com.zesthub.sfa",
+      image: "assets/img/portfolio/my/ayomuslim-cover.jpg",
+      tags: ["Flutter", "iOS & Android", "Audio", "Location"],
+      playstore: "https://play.google.com/store/apps/details?id=id.ayomuslim.app",
+      appstore: "https://apps.apple.com/id/app/ayomuslim-ibadah-komunitas/id6478108245",
+      github: ""
+    },
+    {
+      id: "proj-8",
+      title: "Modo",
+      description: "All-in-one app for condo, office and dormitory residents in Singapore: food delivery, groceries and home services.",
+      category: "filter-app",
+      image: "assets/img/portfolio/my/modo-cover.jpg",
+      tags: ["Flutter", "Super App", "Singapore"],
+      playstore: "https://play.google.com/store/apps/details?id=com.footprintglobal.modoeat",
+      appstore: "",
       github: ""
     },
     {
       id: "proj-3",
       title: "AyoPramuka Kwarnas",
-      description: "Official communication and community app for Gerakan Pramuka Indonesia.",
+      description: "Official communication and community app for Gerakan Pramuka Indonesia, with QR member cards.",
       category: "filter-app",
-      image: "assets/img/portfolio/my/ayopramuka.png",
-      tags: ["Flutter", "Community", "Social API"],
-      playstore: "https://play.google.com/store/apps/details?id=id.pramuka.ayosatu.app&hl=id",
+      image: "assets/img/portfolio/my/ayopramuka-cover.jpg",
+      tags: ["Flutter", "iOS & Android", "Community", "QR"],
+      playstore: "https://play.google.com/store/apps/details?id=id.pramuka.ayosatu.app",
+      appstore: "https://apps.apple.com/us/app/ayopramuka-kwarnas/id1639075094",
+      github: ""
+    },
+    {
+      id: "proj-9",
+      title: "zestHub SFA 2",
+      description: "Sales Force Automation for distributors: visit routes, orders, canvassing and daily sales reports.",
+      category: "filter-app",
+      image: "assets/img/portfolio/my/sfa2-cover.jpg",
+      tags: ["Flutter", "BLoC", "Maps", "Enterprise"],
+      playstore: "https://play.google.com/store/apps/details?id=com.zesthub.sfa2",
+      appstore: "",
+      github: ""
+    },
+    {
+      id: "proj-10",
+      title: "zestHub cCRM",
+      description: "B2B ordering and CRM: product catalog, orders, sales targets and customer visit routes.",
+      category: "filter-app",
+      image: "assets/img/portfolio/my/ccrm-cover.jpg",
+      tags: ["Flutter", "Clean Arch", "E-Commerce", "Enterprise"],
+      playstore: "https://play.google.com/store/apps/details?id=com.zesthub.ccrm",
+      appstore: "",
+      github: ""
+    },
+    {
+      id: "proj-11",
+      title: "zestHub EPOD",
+      description: "Electronic proof of delivery for drivers: daily tasks, route map, handover and delivery confirmation.",
+      category: "filter-app",
+      image: "assets/img/portfolio/my/epod-cover.jpg",
+      tags: ["Flutter", "Maps", "Logistics", "Enterprise"],
+      playstore: "https://play.google.com/store/apps/details?id=com.zesthub.driver",
+      appstore: "",
+      github: ""
+    },
+    {
+      id: "proj-12",
+      title: "@work",
+      description: "HR app for employees: attendance check-in and check-out, leave, overtime and payslips.",
+      category: "filter-app",
+      image: "assets/img/portfolio/my/atwork-cover.jpg",
+      tags: ["Flutter", "HRM", "Enterprise"],
+      playstore: "https://play.google.com/store/apps/details?id=com.zesthub.hrm",
+      appstore: "",
+      github: ""
+    },
+    {
+      id: "proj-1",
+      title: "Okejek App",
+      description: "Ride-hailing, food delivery and courier platform from Malang.",
+      category: "filter-app",
+      image: "assets/img/portfolio/my/okejek-cover.jpg",
+      tags: ["Flutter", "GetX", "REST API", "Maps"],
+      playstore: "https://play.google.com/store/apps/details?id=id.okejack.okejackapp",
+      appstore: "",
+      github: ""
+    },
+    {
+      id: "proj-2",
+      title: "zestHub SFA",
+      description: "First-generation Sales Force Automation app for Sinarmas Distribusi Nusantara (SDN), since replaced by SFA 2.",
+      category: "filter-app",
+      image: "assets/img/portfolio/my/sfa.png",
+      tags: ["Flutter", "Clean Arch", "BLoC", "Enterprise"],
+      playstore: "",
+      appstore: "",
       github: ""
     },
     {
@@ -73,18 +152,20 @@ const DEFAULT_PORTFOLIO_DATA = {
       description: "Complete mobile marketplace solution for e-commerce shopping.",
       category: "filter-app filter-web",
       image: "assets/img/portfolio/my/j5store.png",
-      tags: ["Flutter", "E-Commerce", "GitHub"],
+      tags: ["Flutter", "E-Commerce", "Open Source"],
       playstore: "",
+      appstore: "",
       github: "https://github.com/rickydevs1/j5store-fe"
     },
     {
       id: "proj-5",
       title: "Al-Quran Mobile",
-      description: "Digital Islamic Quran mobile app with audio recitation & translations.",
+      description: "Digital Quran app with audio recitation and translations.",
       category: "filter-app",
       image: "assets/img/portfolio/my/alquran.png",
       tags: ["Flutter", "Audio API", "Offline DB"],
       playstore: "",
+      appstore: "",
       github: "https://github.com/rickydevs1/alquran"
     },
     {
@@ -95,20 +176,48 @@ const DEFAULT_PORTFOLIO_DATA = {
       image: "assets/img/portfolio/my/chat.png",
       tags: ["Flutter", "Firebase", "Realtime"],
       playstore: "",
+      appstore: "",
       github: "https://github.com/rickydevs1/chat_apps"
     }
   ],
   experiences: [
     {
+      id: "exp-7",
+      role: "Founder",
+      company: "PT. Slaza Technology Mandiri",
+      location: "Kab. Malang",
+      period: "September 2026 - Present",
+      bullets: ["Founded a software house that builds web and mobile products for clients.", "YAY TOP UP (client): built the Vue 3 frontend, co-developed the NestJS and PostgreSQL backend with LinkQu payments, and run deployment and server security."]
+    },
+    {
+      id: "exp-5",
+      role: "Mobile Engineer",
+      company: "Green Gold Asia Pte. Ltd.",
+      location: "Remote",
+      period: "April 2026 - June 2026",
+      bullets: [
+        "Worked on Modo, an app based in Singapore."
+      ]
+    },
+    {
+      id: "exp-6",
+      role: "Mobile Engineer",
+      company: "PT. Rahadyan International Capital Haven",
+      location: "Bandung (Remote)",
+      period: "January 2026 - Present",
+      bullets: [
+        "Worked on the Ayo Muslim app."
+      ]
+    },
+    {
       id: "exp-1",
       role: "Mobile Engineer",
       company: "PT. Rahadyan Integrasi Nusantara",
       location: "Tasikmalaya",
-      period: "August 2024 - Present",
+      period: "August 2024 - December 2025",
       bullets: [
-        "Building and scaling Android and iOS mobile applications using Flutter framework.",
-        "Integrating complex REST APIs and optimizing network data processing.",
-        "Translating Figma design systems into responsive, fluid UI components."
+        "Built the AyoPramuka app for Gerakan Pramuka Indonesia with Flutter.",
+        "Integrated REST APIs and built UI from Figma designs."
       ]
     },
     {
@@ -118,9 +227,8 @@ const DEFAULT_PORTFOLIO_DATA = {
       location: "Jakarta",
       period: "November 2022 - Present",
       bullets: [
-        "Developing enterprise-grade cross-platform apps using Flutter & Clean Architecture.",
-        "Executing complex state management solutions (BLoC, Cubit, GetX).",
-        "Ensuring seamless API communication and high app performance across devices."
+        "Built atwork, ePOD Mobile, zestHub SFA2, and zestHub CCRM with Flutter.",
+        "Clean Architecture with BLoC, Cubit, and GetX for state."
       ]
     },
     {
@@ -138,7 +246,7 @@ const DEFAULT_PORTFOLIO_DATA = {
       role: "Mobile Engineer",
       company: "PT. Okejek Kreasi Indonesia",
       location: "Malang",
-      period: "January 2022 - October 2022",
+      period: "January 2022 - December 2022",
       bullets: [
         "Developed core features for Okejek online transportation app using Flutter & Dart.",
         "Implemented real-time data handling, location tracking, and payment flows."
@@ -151,9 +259,11 @@ const DEFAULT_PORTFOLIO_DATA = {
     { id: "sk-3", name: "BLoC / Cubit / GetX", icon: "bi bi-diagram-3", subtext: "Predictable State Management" },
     { id: "sk-4", name: "Clean Architecture", icon: "bi bi-layers", subtext: "Domain, Data, Presentation Layers" },
     { id: "sk-5", name: "RESTful API & JSON", icon: "bi bi-cloud-arrow-down", subtext: "Dio, Http, Dynamic Payloads" },
-    { id: "sk-6", name: "Figma to Flutter UI", icon: "bi bi-figma", subtext: "Pixel-perfect responsive design" },
+    { id: "sk-6", name: "Figma to Flutter UI", icon: "bi bi-figma", subtext: "Responsive layouts from Figma" },
     { id: "sk-7", name: "Git Version Control", icon: "bi bi-git", subtext: "GitHub, GitFlow, Collaboration" },
-    { id: "sk-8", name: "Firebase & Local DB", icon: "bi bi-database", subtext: "Push Notification, Hive, SQLite" }
+    { id: "sk-8", name: "Firebase & Local DB", icon: "bi bi-database", subtext: "Push Notification, Hive, SQLite" },
+    { id: "sk-9", name: "Web & Backend", icon: "bi bi-window-stack", subtext: "Vue 3, NestJS, PostgreSQL, REST" },
+    { id: "sk-10", name: "DevOps & Security", icon: "bi bi-shield-lock", subtext: "Nginx, PM2, Cloudflare, CSP & HSTS" }
   ],
   firebaseConfig: firebaseConfig
 };
@@ -174,22 +284,23 @@ class DataStore {
         console.error("Error parsing local storage", e);
       }
     }
-    this.save(DEFAULT_PORTFOLIO_DATA);
-    return DEFAULT_PORTFOLIO_DATA;
+    // Don't save here: on a fresh browser this would push defaults to Firestore before the remote copy is fetched.
+    return structuredClone(DEFAULT_PORTFOLIO_DATA);
   }
 
   save(data) {
     this.data = data || this.data;
     localStorage.setItem(this.key, JSON.stringify(this.data));
     if (isFirebaseReady) {
-      savePortfolioDataToFirebase(this.data);
+      return savePortfolioDataToFirebase(this.data);
     }
+    return Promise.resolve(null);
   }
 
   reset() {
     localStorage.removeItem(this.key);
     this.data = DEFAULT_PORTFOLIO_DATA;
-    this.save(DEFAULT_PORTFOLIO_DATA);
+    return this.save(DEFAULT_PORTFOLIO_DATA);
   }
 }
 
@@ -334,7 +445,9 @@ export function openProjectModal(id = null) {
     document.getElementById("proj-description").value = item.description;
     document.getElementById("proj-image").value = item.image;
     document.getElementById("proj-tags").value = item.tags.join(", ");
+    document.getElementById("proj-website").value = item.website || "";
     document.getElementById("proj-playstore").value = item.playstore || "";
+    document.getElementById("proj-appstore").value = item.appstore || "";
     document.getElementById("proj-github").value = item.github || "";
 
     if (item.image && previewContainer && previewImg) {
@@ -388,7 +501,9 @@ export function saveProject(e) {
     description: document.getElementById("proj-description").value,
     image: document.getElementById("proj-image").value || "assets/img/portfolio/my/okjek.png",
     tags: document.getElementById("proj-tags").value.split(",").map(t => t.trim()).filter(t => t),
+    website: document.getElementById("proj-website").value,
     playstore: document.getElementById("proj-playstore").value,
+    appstore: document.getElementById("proj-appstore").value,
     github: document.getElementById("proj-github").value
   };
 
@@ -575,8 +690,6 @@ export function renderProfileForm() {
   if (document.getElementById("prof-degree")) document.getElementById("prof-degree").value = p.degree || "";
   document.getElementById("prof-exp-years").value = p.experienceYears || "";
   document.getElementById("prof-apps").value = p.appsShipped || "";
-  if (document.getElementById("prof-clean-code")) document.getElementById("prof-clean-code").value = p.cleanCode || "";
-  if (document.getElementById("prof-problem-solving")) document.getElementById("prof-problem-solving").value = p.problemSolving || "";
   document.getElementById("prof-github").value = p.socials?.github || "";
   document.getElementById("prof-linkedin").value = p.socials?.linkedin || "";
   document.getElementById("prof-telegram").value = p.socials?.telegram || "";
@@ -596,8 +709,6 @@ export function saveProfile(e) {
   if (document.getElementById("prof-degree")) store.data.profile.degree = document.getElementById("prof-degree").value;
   store.data.profile.experienceYears = document.getElementById("prof-exp-years").value;
   store.data.profile.appsShipped = document.getElementById("prof-apps").value;
-  if (document.getElementById("prof-clean-code")) store.data.profile.cleanCode = document.getElementById("prof-clean-code").value;
-  if (document.getElementById("prof-problem-solving")) store.data.profile.problemSolving = document.getElementById("prof-problem-solving").value;
 
   if (!store.data.profile.socials) store.data.profile.socials = {};
   store.data.profile.socials.github = document.getElementById("prof-github").value;
@@ -645,11 +756,15 @@ export function exportJSON() {
   downloadAnchor.remove();
 }
 
-export function resetAllData() {
-  if (confirm("Reset all data back to original defaults?")) {
-    store.reset();
-    location.reload();
+export async function resetAllData() {
+  if (!confirm("Replace ALL portfolio data (local and Firestore) with the defaults from admin.js?")) return;
+  // Wait for the Firestore write; reloading first aborts it and the old remote data comes back.
+  const result = await store.reset();
+  if (result && !result.success) {
+    alert("❌ Firestore not updated: " + (result.message || result.reason));
+    return;
   }
+  location.reload();
 }
 
 export function closeModal(modalId) {

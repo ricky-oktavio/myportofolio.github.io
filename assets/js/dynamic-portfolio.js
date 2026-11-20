@@ -10,19 +10,23 @@ import {
 
 const LOCAL_STORAGE_KEY = "ricky_portfolio_cms_data";
 
+// CMS data goes into innerHTML on the public page; escape it.
+const esc = (v) => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+// Escaping does not stop a javascript: URL, so links and images only accept these schemes or a site-relative path.
+const safeUrl = (v) => /^(https?:\/\/|mailto:|tel:|data:image\/|assets\/)/i.test(String(v ?? "").trim()) ? String(v).trim() : "";
+
 // Fallback Default Data
 const DEFAULT_DATA = {
   profile: {
     fullName: "Ricky Oktavio Adi Pranata",
     headline: "Senior Mobile Engineer • Flutter & Dart Specialist",
     statusBadge: "Available for Freelance & Full-time",
-    bio: "Passionate Mobile Engineer from Malang, Indonesia with 3+ years of experience building high-performance cross-platform applications using Flutter, Clean Architecture, BLoC, and GetX.",
+    bio: "Mobile engineer in Malang, Indonesia. I've built Flutter apps for iOS and Android since 2020, using Clean Architecture with BLoC and GetX.",
     location: "Malang City, East Java, Indonesia",
     email: "adioktav1997@gmail.com",
     phone: "+6285171115997",
-    experienceYears: "3+",
-    appsShipped: "7+",
-    cleanCode: "100%",
+    experienceYears: "6+",
+    appsShipped: "9",
     socials: {
       github: "https://github.com/ricky-oktavio?tab=repositories",
       linkedin: "https://www.linkedin.com/in/ricky-oktavio-adi-pranata-b27aa61b8/",
@@ -52,7 +56,7 @@ export function updatePortfolioUI(data) {
 
   const profile = data.profile || DEFAULT_DATA.profile;
 
-  // 1. Hero & Profile Texts
+  // Hero & Profile Texts
   const statusBadge = document.getElementById("hero-status-badge");
   if (statusBadge && profile.statusBadge) statusBadge.textContent = profile.statusBadge;
 
@@ -68,9 +72,7 @@ export function updatePortfolioUI(data) {
   const heroStatYears = document.getElementById("hero-stat-years");
   if (heroStatYears && profile.experienceYears) heroStatYears.textContent = profile.experienceYears + " Years";
 
-  // 2. About Me Section & Info Items
-  const aboutBioP1 = document.getElementById("about-bio-p1");
-  if (aboutBioP1 && profile.bio) aboutBioP1.textContent = profile.bio;
+  // About Me Section & Info Items
 
   const aboutBioP2 = document.getElementById("about-bio-p2");
   if (aboutBioP2 && profile.bioP2) aboutBioP2.textContent = profile.bioP2;
@@ -93,108 +95,81 @@ export function updatePortfolioUI(data) {
   const aboutDegree = document.getElementById("about-degree");
   if (aboutDegree && profile.degree) aboutDegree.textContent = profile.degree;
 
-  // 3. Metrics
+  // Metrics
   const metricExpYears = document.getElementById("metric-exp-years");
   if (metricExpYears && profile.experienceYears) metricExpYears.textContent = profile.experienceYears;
 
   const metricApps = document.getElementById("metric-apps-shipped");
   if (metricApps && profile.appsShipped) metricApps.textContent = profile.appsShipped;
 
-  const metricCleanCode = document.getElementById("metric-clean-code");
-  if (metricCleanCode && profile.cleanCode) metricCleanCode.textContent = profile.cleanCode;
-
-  const metricProblemSolving = document.getElementById("metric-problem-solving");
-  if (metricProblemSolving && profile.problemSolving) metricProblemSolving.textContent = profile.problemSolving;
-
-  // 4. Contact & Socials
+  // Contact & Socials
   const socialGithub = document.querySelectorAll(".link-github");
-  socialGithub.forEach(el => { if (profile.socials?.github) el.href = profile.socials.github; });
+  socialGithub.forEach(el => { if (safeUrl(profile.socials?.github)) el.href = safeUrl(profile.socials.github); });
 
   const socialLinkedin = document.querySelectorAll(".link-linkedin");
-  socialLinkedin.forEach(el => { if (profile.socials?.linkedin) el.href = profile.socials.linkedin; });
+  socialLinkedin.forEach(el => { if (safeUrl(profile.socials?.linkedin)) el.href = safeUrl(profile.socials.linkedin); });
 
   const socialTelegram = document.querySelectorAll(".link-telegram");
-  socialTelegram.forEach(el => { if (profile.socials?.telegram) el.href = profile.socials.telegram; });
+  socialTelegram.forEach(el => { if (safeUrl(profile.socials?.telegram)) el.href = safeUrl(profile.socials.telegram); });
 
   const socialWhatsapp = document.querySelectorAll(".link-whatsapp");
-  socialWhatsapp.forEach(el => { if (profile.socials?.whatsapp) el.href = profile.socials.whatsapp; });
+  socialWhatsapp.forEach(el => { if (safeUrl(profile.socials?.whatsapp)) el.href = safeUrl(profile.socials.whatsapp); });
 
-  // 4. Render Skills Grid
+  document.querySelectorAll(".link-email").forEach(el => { if (profile.email) el.href = "mailto:" + profile.email; });
+
+  // Render Stack list
   if (data.skills && data.skills.length > 0) {
     const skillsContainer = document.getElementById("skills-container");
     if (skillsContainer) {
       skillsContainer.innerHTML = data.skills.map(sk => `
-        <div class="tech-card">
-          <div class="tech-icon"><i class="${sk.icon}"></i></div>
-          <div class="tech-info">
-            <h4>${sk.name}</h4>
-            <p>${sk.subtext}</p>
-          </div>
-        </div>
+        <li class="stack-item"><i class="${esc(sk.icon)}" aria-hidden="true"></i><span class="stack-name">${esc(sk.name)}</span><span class="stack-sub">${esc(sk.subtext)}</span></li>
       `).join("");
     }
   }
 
-  // 5. Render Experiences Timeline
+  // Render Experience rows
   if (data.experiences && data.experiences.length > 0) {
     const expContainer = document.getElementById("experience-timeline-container");
     if (expContainer) {
       expContainer.innerHTML = data.experiences.map(exp => `
-        <div class="timeline-item">
-          <span class="timeline-dot"></span>
-          <div class="timeline-content">
-            <h4 class="timeline-title">${exp.role}</h4>
-            <div class="timeline-subtitle">${exp.company} • ${exp.location}</div>
-            <span class="timeline-date">${exp.period}</span>
-            <ul class="timeline-list">
-              ${exp.bullets.map(b => `<li>${b}</li>`).join("")}
-            </ul>
+        <li class="xp-row">
+          <span class="xp-period">${esc(exp.period)}</span>
+          <div class="xp-main">
+            <h3>${esc(exp.role)}</h3>
+            <p class="xp-co">${esc(exp.company)}</p>
+            <ul class="xp-notes">${(exp.bullets || []).map(b => `<li>${esc(b)}</li>`).join("")}</ul>
           </div>
-        </div>
+          <span class="xp-loc">${esc(exp.location)}</span>
+        </li>
       `).join("");
     }
   }
 
-  // 6. Render Projects Grid
+  // Render Work cards
   if (data.projects && data.projects.length > 0) {
     const projectsContainer = document.getElementById("portfolio-grid-container");
     if (projectsContainer) {
       projectsContainer.innerHTML = data.projects.map(proj => `
-        <div class="col-lg-4 col-md-6 portfolio-item ${proj.category}">
-          <div class="portfolio-wrap">
-            <div class="portfolio-img-box">
-              <img src="${proj.image}" alt="${proj.title}">
-            </div>
-            <div class="portfolio-info-box">
-              <div>
-                <h4>${proj.title}</h4>
-                <p>${proj.description}</p>
-                <div class="portfolio-tags">
-                  ${proj.tags.map(t => `<span class="tag-badge">${t}</span>`).join("")}
-                </div>
-              </div>
-              <div class="portfolio-links-box">
-                <a href="${proj.image}" class="portfolio-lightbox btn-icon-link" title="${proj.title}"><i class="bi bi-zoom-in"></i></a>
-                ${proj.playstore ? `<a href="${proj.playstore}" target="_blank" class="btn-icon-link" title="Google Play Store"><i class="bi bi-box-arrow-up-right"></i></a>` : ''}
-                ${proj.github ? `<a href="${proj.github}" target="_blank" class="btn-icon-link" title="GitHub Repository"><i class="bi bi-github"></i></a>` : ''}
-              </div>
+        <article class="work-card ${esc(proj.category)}">
+          <a class="work-media portfolio-lightbox" href="${esc(safeUrl(proj.image))}" data-title="${esc(proj.title)}"><img src="${esc(safeUrl(proj.image))}" alt="${esc(proj.title)}" loading="lazy"></a>
+          <div class="work-meta">
+            <h3>${esc(proj.title)}</h3>
+            <p>${esc(proj.description)}</p>
+            <ul class="work-tags">${(proj.tags || []).map(t => `<li>${esc(t)}</li>`).join("")}</ul>
+            <div class="work-links">
+              ${safeUrl(proj.website) ? `<a href="${esc(safeUrl(proj.website))}" target="_blank" rel="noopener">Website ↗</a>` : ""}
+              ${safeUrl(proj.playstore) ? `<a href="${esc(safeUrl(proj.playstore))}" target="_blank" rel="noopener">Play Store ↗</a>` : ""}
+              ${safeUrl(proj.appstore) ? `<a href="${esc(safeUrl(proj.appstore))}" target="_blank" rel="noopener">App Store ↗</a>` : ""}
+              ${safeUrl(proj.github) ? `<a href="${esc(safeUrl(proj.github))}" target="_blank" rel="noopener">GitHub ↗</a>` : ""}
             </div>
           </div>
-        </div>
+        </article>
       `).join("");
-
-      // Re-initialize Isotope & Lightbox if available
-      if (window.Isotope && document.querySelector('.portfolio-container')) {
-        setTimeout(() => {
-          let portfolioIsotope = new Isotope(document.querySelector('.portfolio-container'), {
-            itemSelector: '.portfolio-item',
-            layoutMode: 'fitRows'
-          });
-          if (window.GLightbox) GLightbox({ selector: '.portfolio-lightbox' });
-        }, 200);
-      }
     }
   }
+
+  // Re-split the statement, rescale the stack, re-apply the filter, reload the lightbox
+  window.site?.refresh();
 }
 
 // Initialize on DOM load

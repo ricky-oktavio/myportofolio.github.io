@@ -4,566 +4,355 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="theme-color" content="#0A0A0A">
 
-  <title>Ricky Oktavio Adi Pranata — Senior Mobile Engineer (Flutter)</title>
-  <meta content="Portfolio of Ricky Oktavio Adi Pranata, a Senior Mobile Engineer specializing in Flutter, Dart, BLoC, GetX, Clean Architecture, and Cross-Platform Apps." name="description">
+  <title>Ricky Oktavio Adi Pranata | Senior Mobile Engineer (Flutter)</title>
+  <meta content="Portfolio of Ricky Oktavio Adi Pranata, a Senior Mobile Engineer in Malang building Flutter apps for iOS and Android with Clean Architecture, BLoC and GetX." name="description">
   <meta content="Ricky Oktavio Adi Pranata, Flutter Developer, Mobile Engineer, Dart, Malang, Portfolio, Clean Architecture, GetX, BLoC" name="keywords">
 
-  <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/site.css" rel="stylesheet">
 </head>
 
 <body>
+  <a class="skip-link" href="#work">Skip to work</a>
 
-  <!-- ======= Header / Navbar ======= -->
-  <header id="header">
-    <div class="container nav-container">
-      <a href="index.html" class="logo-brand">
-        <img src="assets/img/ric.jpg" alt="Ricky Oktavio" class="logo-avatar">
-        <span>Ricky Oktavio</span>
-      </a>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link active" href="#hero">Home</a></li>
-          <li><a class="nav-link" href="#about">About</a></li>
-          <li><a class="nav-link" href="#skills">Tech Stack</a></li>
-          <li><a class="nav-link" href="#resume">Experience</a></li>
-          <li><a class="nav-link" href="#portfolio">Projects</a></li>
-          <li><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <i class="bi bi-list mobile-nav-toggle"></i>
-    </div>
+  <!-- ======= Top bar ======= -->
+  <header class="topbar">
+    <a href="#hero" class="topbar-brand">Ricky Oktavio</a>
+    <nav class="topbar-nav" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <p class="topbar-clock">Malang <time class="js-clock">--:--</time> WIB</p>
   </header>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero-section">
-    <div class="container">
-      <div class="row align-items-center gy-5">
-        <div class="col-lg-7">
-          <div class="status-badge">
-            <span class="status-dot"></span>
-            <span id="hero-status-badge">Available for Freelance & Full-time</span>
-          </div>
+  <main>
+    <!-- ======= Hero ======= -->
+    <section id="hero" class="hero">
+      <canvas class="hero-dots" data-src="assets/img/ric.jpg" aria-hidden="true"></canvas>
+      <div class="hero-shade" aria-hidden="true"></div>
 
-          <h1 class="hero-title" id="hero-name">Ricky Oktavio Adi Pranata</h1>
-          <h2 class="hero-subtitle" id="hero-headline">Senior Mobile Engineer • Flutter & Dart Specialist</h2>
-          
-          <p class="hero-description" id="hero-bio">
-            Passionate Mobile Engineer from Malang, Indonesia with 3+ years of experience building high-performance cross-platform applications using Flutter, Clean Architecture, BLoC, and GetX.
-          </p>
+      <div class="notif" role="status">
+        <span class="notif-icon"><i class="px" data-sprite="chat" aria-hidden="true"></i></span>
+        <span class="notif-body">
+          <span class="notif-app">Messages · now</span>
+          <span class="notif-text">Hi there! Got an app you want built?</span>
+        </span>
+      </div>
 
-          <div class="hero-actions">
-            <a href="#portfolio" class="btn-gradient">
-              <i class="bi bi-rocket-takeoff-fill"></i>
-              <span>Explore My Works</span>
-            </a>
-            <a href="https://wa.me/6285171115997" target="_blank" class="btn-glass link-whatsapp">
-              <i class="bi bi-whatsapp"></i>
-              <span>Let's Talk</span>
-            </a>
-          </div>
+      <h1 class="hero-name" id="hero-name">Ricky Oktavio Adi Pranata</h1>
 
-          <div class="social-links">
-            <a href="https://github.com/ricky-oktavio?tab=repositories" target="_blank" class="social-icon link-github" title="GitHub"><i class="bi bi-github"></i></a>
-            <a href="https://www.linkedin.com/in/ricky-oktavio-adi-pranata-b27aa61b8/" target="_blank" class="social-icon link-linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            <a href="https://t.me/rckycrk" target="_blank" class="social-icon link-telegram" title="Telegram"><i class="bi bi-telegram"></i></a>
-            <a href="https://wa.me/6285171115997" target="_blank" class="social-icon link-whatsapp" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-5 profile-card-container">
-          <div class="profile-card">
-            <div class="profile-img-wrap">
-              <img src="assets/img/ric.jpg" alt="Ricky Oktavio Adi Pranata">
-            </div>
-            <div class="floating-stat-badge">
-              <span class="stat-number" id="hero-stat-years">3+ Years</span>
-              <span class="stat-label">Flutter Expertise</span>
-            </div>
-          </div>
+      <div class="hero-foot">
+        <p class="hero-role" id="hero-headline">Senior Mobile Engineer • Flutter & Dart Specialist</p>
+        <a href="#about" class="hero-down" aria-label="Scroll to about">
+          <i class="px" data-sprite="arrow" aria-hidden="true"></i>
+        </a>
+        <div class="hero-status">
+          <p><span class="live-dot" aria-hidden="true"></span><span id="hero-status-badge">Available for Freelance & Full-time</span></p>
+          <p class="hero-years"><span id="hero-stat-years">6+ Years</span> shipping Flutter</p>
         </div>
       </div>
+    </section>
+
+    <!-- ======= Paper sheet ======= -->
+    <div class="sheet">
+
+      <!-- About / statement -->
+      <section id="about" class="about">
+        <div class="pixel-field" aria-hidden="true">
+          <i class="px" data-sprite="phone" style="top:12%;left:8%"></i>
+          <i class="px" data-sprite="wifi" style="top:30%;left:28%"></i>
+          <i class="px" data-sprite="signal" style="top:8%;left:52%"></i>
+          <i class="px" data-sprite="battery" style="top:26%;left:74%"></i>
+          <i class="px" data-sprite="spark" style="top:52%;left:90%"></i>
+          <i class="px" data-sprite="cursor" style="top:58%;left:16%"></i>
+          <i class="px" data-sprite="spark" style="top:6%;left:88%"></i>
+        </div>
+
+        <p class="statement js-reveal" id="hero-bio">Mobile engineer in Malang, Indonesia. I've built Flutter apps for iOS and Android since 2020, using Clean Architecture with BLoC and GetX.</p>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p class="label">(About)</p>
+            <p id="about-bio-p1">I've worked in Flutter since 2020. Most of my apps use Clean Architecture with GetX, BLoC, or Cubit for state.</p>
+            <p id="about-bio-p2">From ride-hailing services like Okejek to enterprise Sales Force Automation (zestHub SFA) and official organization platforms like AyoPramuka Kwarnas, I turn Figma designs into Flutter code.</p>
+          </div>
+          <dl class="about-facts">
+            <div><dt>City</dt><dd id="about-city">Malang, Indonesia</dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:adioktav1997@gmail.com" id="about-email">adioktav1997@gmail.com</a></dd></div>
+            <div><dt>Phone</dt><dd><a href="tel:+6285171115997" id="about-phone">+6285171115997</a></dd></div>
+            <div><dt>Degree</dt><dd id="about-degree">B.S. Informatics Engineering</dd></div>
+          </dl>
+        </div>
+
+        <div class="metrics">
+          <p class="metric"><span class="metric-num" id="metric-exp-years">6+</span> years in Flutter</p>
+          <p class="metric metric-indent"><span class="metric-num" id="metric-apps-shipped">9</span> apps shipped</p>
+        </div>
+      </section>
+
+      <!-- Work -->
+      <section id="work" class="work">
+        <h2 class="mega">Selected work</h2>
+
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button type="button" class="chip" data-filter="*" aria-pressed="true"><i class="px" data-sprite="spark" aria-hidden="true"></i>All</button>
+          <button type="button" class="chip" data-filter="filter-app" aria-pressed="false"><i class="px" data-sprite="phone" aria-hidden="true"></i>Mobile</button>
+          <button type="button" class="chip" data-filter="filter-web" aria-pressed="false"><i class="px" data-sprite="cursor" aria-hidden="true"></i>Web</button>
+        </div>
+
+        <div class="work-grid" id="portfolio-grid-container">
+          <article class="work-card filter-web">
+            <a class="work-media portfolio-lightbox" href="assets/img/portfolio/my/yaytopup-cover.jpg" data-title="YAY TOP UP"><img src="assets/img/portfolio/my/yaytopup-cover.jpg" alt="YAY TOP UP on desktop and mobile" loading="lazy"></a>
+            <div class="work-meta">
+              <h3>YAY TOP UP</h3>
+              <p>Game coin and e-wallet top-up platform with automatic delivery in seconds, QRIS and virtual account payments via LinkQu, and an affiliate program. Built for a client through Slaza Technology.</p>
+              <ul class="work-tags"><li>Vue 3</li><li>NestJS</li><li>PostgreSQL</li><li>DevOps</li></ul>
+              <div class="work-links"><a href="https://yaytopup.id" target="_blank" rel="noopener">Website ↗</a></div>
+            </div>
+          </article>
+
+          <article class="work-card filter-app">
+            <a class="work-media portfolio-lightbox" href="assets/img/portfolio/my/ayomuslim-cover.jpg" data-title="AyoMuslim"><img src="assets/img/portfolio/my/ayomuslim-cover.jpg" alt="AyoMuslim app screens" loading="lazy"></a>
+            <div class="work-meta">
+              <h3>AyoMuslim</h3>
+              <p>Worship and community app: location-based prayer times, the Qur&#x27;an with 40+ reciters, daily du&#x27;a, dhikr and habit tracking.</p>
+              <ul class="work-tags"><li>Flutter</li><li>iOS &amp; Android</li><li>Audio</li><li>Location</li></ul>
+              <div class="work-links"><a href="https://play.google.com/store/apps/details?id=id.ayomuslim.app" target="_blank" rel="noopener">Play Store ↗</a><a href="https://apps.apple.com/id/app/ayomuslim-ibadah-komunitas/id6478108245" target="_blank" rel="noopener">App Store ↗</a></div>
+            </div>
+          </article>
+
+          <article class="work-card filter-app">
+            <a class="work-media portfolio-lightbox" href="assets/img/portfolio/my/modo-cover.jpg" data-title="Modo"><img src="assets/img/portfolio/my/modo-cover.jpg" alt="Modo app screens" loading="lazy"></a>
+            <div class="work-meta">
+              <h3>Modo</h3>
+              <p>All-in-one app for condo, office and dormitory residents in Singapore: food delivery, groceries and home services.</p>
+              <ul class="work-tags"><li>Flutter</li><li>Super App</li><li>Singapore</li></ul>
+              <div class="work-links"><a href="https://play.google.com/store/apps/details?id=com.footprintglobal.modoeat" target="_blank" rel="noopener">Play Store ↗</a></div>
+            </div>
+          </article>
+
+          <article class="work-card filter-app">
+            <a class="work-media portfolio-lightbox" href="assets/img/portfolio/my/ayopramuka-cover.jpg" data-title="AyoPramuka Kwarnas"><img src="assets/img/portfolio/my/ayopramuka-cover.jpg" alt="AyoPramuka Kwarnas app screens" loading="lazy"></a>
+            <div class="work-meta">
+              <h3>AyoPramuka Kwarnas</h3>
+              <p>Official communication and community app for Gerakan Pramuka Indonesia, with QR member cards.</p>
+              <ul class="work-tags"><li>Flutter</li><li>iOS &amp; Android</li><li>Community</li><li>QR</li></ul>
+              <div class="work-links"><a href="https://play.google.com/store/apps/details?id=id.pramuka.ayosatu.app" target="_blank" rel="noopener">Play Store ↗</a><a href="https://apps.apple.com/us/app/ayopramuka-kwarnas/id1639075094" target="_blank" rel="noopener">App Store ↗</a></div>
+            </div>
+          </article>
+
+          <article class="work-card filter-app">
+            <a class="work-media portfolio-lightbox" href="assets/img/portfolio/my/sfa2-cover.jpg" data-title="zestHub SFA 2"><img src="assets/img/portfolio/my/sfa2-cover.jpg" alt="zestHub SFA 2 app screens" loading="lazy"></a>
+            <div class="work-meta">
+              <h3>zestHub SFA 2</h3>
+              <p>Sales Force Automation for distributors: visit routes, orders, canvassing and daily sales reports.</p>
+              <ul class="work-tags"><li>Flutter</li><li>BLoC</li><li>Maps</li><li>Enterprise</li></ul>
+              <div class="work-links"><a href="https://play.google.com/store/apps/details?id=com.zesthub.sfa2" target="_blank" rel="noopener">Play Store ↗</a></div>
+            </div>
+          </article>
+
+          <article class="work-card filter-app">
+            <a class="work-media portfolio-lightbox" href="assets/img/portfolio/my/ccrm-cover.jpg" data-title="zestHub cCRM"><img src="assets/img/portfolio/my/ccrm-cover.jpg" alt="zestHub cCRM app screens" loading="lazy"></a>
+            <div class="work-meta">
+              <h3>zestHub cCRM</h3>
+              <p>B2B ordering and CRM: product catalog, orders, sales targets and customer visit routes.</p>
+              <ul class="work-tags"><li>Flutter</li><li>Clean Arch</li><li>E-Commerce</li><li>Enterprise</li></ul>
+              <div class="work-links"><a href="https://play.google.com/store/apps/details?id=com.zesthub.ccrm" target="_blank" rel="noopener">Play Store ↗</a></div>
+            </div>
+          </article>
+
+          <article class="work-card filter-app">
+            <a class="work-media portfolio-lightbox" href="assets/img/portfolio/my/epod-cover.jpg" data-title="zestHub EPOD"><img src="assets/img/portfolio/my/epod-cover.jpg" alt="zestHub EPOD app screens" loading="lazy"></a>
+            <div class="work-meta">
+              <h3>zestHub EPOD</h3>
+              <p>Electronic proof of delivery for drivers: daily tasks, route map, handover and delivery confirmation.</p>
+              <ul class="work-tags"><li>Flutter</li><li>Maps</li><li>Logistics</li><li>Enterprise</li></ul>
+              <div class="work-links"><a href="https://play.google.com/store/apps/details?id=com.zesthub.driver" target="_blank" rel="noopener">Play Store ↗</a></div>
+            </div>
+          </article>
+
+          <article class="work-card filter-app">
+            <a class="work-media portfolio-lightbox" href="assets/img/portfolio/my/atwork-cover.jpg" data-title="@work"><img src="assets/img/portfolio/my/atwork-cover.jpg" alt="@work app screens" loading="lazy"></a>
+            <div class="work-meta">
+              <h3>@work</h3>
+              <p>HR app for employees: attendance check-in and check-out, leave, overtime and payslips.</p>
+              <ul class="work-tags"><li>Flutter</li><li>HRM</li><li>Enterprise</li></ul>
+              <div class="work-links"><a href="https://play.google.com/store/apps/details?id=com.zesthub.hrm" target="_blank" rel="noopener">Play Store ↗</a></div>
+            </div>
+          </article>
+
+          <article class="work-card filter-app">
+            <a class="work-media portfolio-lightbox" href="assets/img/portfolio/my/okejek-cover.jpg" data-title="Okejek App"><img src="assets/img/portfolio/my/okejek-cover.jpg" alt="Okejek App app screens" loading="lazy"></a>
+            <div class="work-meta">
+              <h3>Okejek App</h3>
+              <p>Ride-hailing, food delivery and courier platform from Malang.</p>
+              <ul class="work-tags"><li>Flutter</li><li>GetX</li><li>REST API</li><li>Maps</li></ul>
+              <div class="work-links"><a href="https://play.google.com/store/apps/details?id=id.okejack.okejackapp" target="_blank" rel="noopener">Play Store ↗</a></div>
+            </div>
+          </article>
+
+          <article class="work-card filter-app">
+            <a class="work-media portfolio-lightbox" href="assets/img/portfolio/my/sfa.png" data-title="zestHub SFA"><img src="assets/img/portfolio/my/sfa.png" alt="zestHub SFA app screens" loading="lazy"></a>
+            <div class="work-meta">
+              <h3>zestHub SFA</h3>
+              <p>First-generation Sales Force Automation app for Sinarmas Distribusi Nusantara (SDN), since replaced by SFA 2.</p>
+              <ul class="work-tags"><li>Flutter</li><li>Clean Arch</li><li>BLoC</li><li>Enterprise</li></ul>
+              <div class="work-links"></div>
+            </div>
+          </article>
+
+          <article class="work-card filter-app filter-web">
+            <a class="work-media portfolio-lightbox" href="assets/img/portfolio/my/j5store.png" data-title="J5Store Marketplace"><img src="assets/img/portfolio/my/j5store.png" alt="J5Store Marketplace app screens" loading="lazy"></a>
+            <div class="work-meta">
+              <h3>J5Store Marketplace</h3>
+              <p>Complete mobile marketplace solution for e-commerce shopping.</p>
+              <ul class="work-tags"><li>Flutter</li><li>E-Commerce</li><li>Open Source</li></ul>
+              <div class="work-links"><a href="https://github.com/rickydevs1/j5store-fe" target="_blank" rel="noopener">GitHub ↗</a></div>
+            </div>
+          </article>
+
+          <article class="work-card filter-app">
+            <a class="work-media portfolio-lightbox" href="assets/img/portfolio/my/alquran.png" data-title="Al-Quran Mobile"><img src="assets/img/portfolio/my/alquran.png" alt="Al-Quran Mobile app screens" loading="lazy"></a>
+            <div class="work-meta">
+              <h3>Al-Quran Mobile</h3>
+              <p>Digital Quran app with audio recitation and translations.</p>
+              <ul class="work-tags"><li>Flutter</li><li>Audio API</li><li>Offline DB</li></ul>
+              <div class="work-links"><a href="https://github.com/rickydevs1/alquran" target="_blank" rel="noopener">GitHub ↗</a></div>
+            </div>
+          </article>
+
+          <article class="work-card filter-app">
+            <a class="work-media portfolio-lightbox" href="assets/img/portfolio/my/chat.png" data-title="Chat Application"><img src="assets/img/portfolio/my/chat.png" alt="Chat Application app screens" loading="lazy"></a>
+            <div class="work-meta">
+              <h3>Chat Application</h3>
+              <p>Real-time messaging mobile application interface.</p>
+              <ul class="work-tags"><li>Flutter</li><li>Firebase</li><li>Realtime</li></ul>
+              <div class="work-links"><a href="https://github.com/rickydevs1/chat_apps" target="_blank" rel="noopener">GitHub ↗</a></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Stack -->
+      <section id="stack" class="stack">
+        <h2 class="mega">The stack</h2>
+
+        <div class="stack-body">
+        <div class="stamps" aria-hidden="true">
+          <span class="stamp stamp-cobalt" style="top:0;left:6%;--rot:-12deg">Since<br>2020</span>
+          <span class="stamp stamp-ink" style="top:58%;left:12%;--rot:8deg">Malang<br>· ID ·</span>
+          <span class="stamp stamp-lime" style="top:2%;right:3%;--rot:10deg">Remote<br>OK</span>
+          <span class="stamp stamp-paper" style="top:64%;right:12%;--rot:-7deg">UMM<br>'21</span>
+        </div>
+
+        <ul class="stack-list" id="skills-container">
+          <li class="stack-item"><i class="bi bi-phone" aria-hidden="true"></i><span class="stack-name">Flutter Framework</span><span class="stack-sub">Cross-platform iOS & Android Apps</span></li>
+          <li class="stack-item"><i class="bi bi-code-slash" aria-hidden="true"></i><span class="stack-name">Dart Programming</span><span class="stack-sub">Object-Oriented & Asynchronous</span></li>
+          <li class="stack-item"><i class="bi bi-diagram-3" aria-hidden="true"></i><span class="stack-name">BLoC / Cubit / GetX</span><span class="stack-sub">Predictable State Management</span></li>
+          <li class="stack-item"><i class="bi bi-layers" aria-hidden="true"></i><span class="stack-name">Clean Architecture</span><span class="stack-sub">Domain, Data, Presentation Layers</span></li>
+          <li class="stack-item"><i class="bi bi-cloud-arrow-down" aria-hidden="true"></i><span class="stack-name">RESTful API & JSON</span><span class="stack-sub">Dio, Http, Dynamic Payloads</span></li>
+          <li class="stack-item"><i class="bi bi-figma" aria-hidden="true"></i><span class="stack-name">Figma to Flutter UI</span><span class="stack-sub">Responsive layouts from Figma</span></li>
+          <li class="stack-item"><i class="bi bi-git" aria-hidden="true"></i><span class="stack-name">Git Version Control</span><span class="stack-sub">GitHub, GitFlow, Collaboration</span></li>
+          <li class="stack-item"><i class="bi bi-database" aria-hidden="true"></i><span class="stack-name">Firebase & Local DB</span><span class="stack-sub">Push Notification, Hive, SQLite</span></li>
+          <li class="stack-item"><i class="bi bi-window-stack" aria-hidden="true"></i><span class="stack-name">Web &amp; Backend</span><span class="stack-sub">Vue 3, NestJS, PostgreSQL, REST</span></li>
+          <li class="stack-item"><i class="bi bi-shield-lock" aria-hidden="true"></i><span class="stack-name">DevOps &amp; Security</span><span class="stack-sub">Nginx, PM2, Cloudflare, CSP &amp; HSTS</span></li>
+        </ul>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="experience">
+        <h2 class="mega">Experience</h2>
+
+        <ol class="xp-list" id="experience-timeline-container">
+          <li class="xp-row">
+            <span class="xp-period">September 2026 - Present</span>
+            <div class="xp-main"><h3>Founder</h3><p class="xp-co">PT. Slaza Technology Mandiri</p><ul class="xp-notes"><li>Founded a software house that builds web and mobile products for clients.</li><li>YAY TOP UP (client): built the Vue 3 frontend, co-developed the NestJS and PostgreSQL backend with LinkQu payments, and run deployment and server security.</li></ul></div>
+            <span class="xp-loc">Kab. Malang</span>
+          </li>
+          <li class="xp-row">
+            <span class="xp-period">April 2026 - June 2026</span>
+            <div class="xp-main"><h3>Mobile Engineer</h3><p class="xp-co">Green Gold Asia Pte. Ltd.</p><ul class="xp-notes"><li>Worked on Modo, an app based in Singapore.</li></ul></div>
+            <span class="xp-loc">Remote</span>
+          </li>
+          <li class="xp-row">
+            <span class="xp-period">January 2026 - Present</span>
+            <div class="xp-main"><h3>Mobile Engineer</h3><p class="xp-co">PT. Rahadyan International Capital Haven</p><ul class="xp-notes"><li>Worked on the Ayo Muslim app.</li></ul></div>
+            <span class="xp-loc">Bandung (Remote)</span>
+          </li>
+          <li class="xp-row">
+            <span class="xp-period">August 2024 - December 2025</span>
+            <div class="xp-main"><h3>Mobile Engineer</h3><p class="xp-co">PT. Rahadyan Integrasi Nusantara</p><ul class="xp-notes"><li>Built the AyoPramuka app for Gerakan Pramuka Indonesia with Flutter.</li><li>Integrated REST APIs and built UI from Figma designs.</li></ul></div>
+            <span class="xp-loc">Tasikmalaya</span>
+          </li>
+          <li class="xp-row">
+            <span class="xp-period">November 2022 - Present</span>
+            <div class="xp-main"><h3>Mobile Engineer</h3><p class="xp-co">PT. Asaba Computer Centre</p><ul class="xp-notes"><li>Built atwork, ePOD Mobile, zestHub SFA2, and zestHub CCRM with Flutter.</li><li>Clean Architecture with BLoC, Cubit, and GetX for state.</li></ul></div>
+            <span class="xp-loc">Jakarta</span>
+          </li>
+          <li class="xp-row">
+            <span class="xp-period">August 2022 - Present</span>
+            <div class="xp-main"><h3>Managing Director & IT Support</h3><p class="xp-co">PT. Jlima Digital Indonesia</p><ul class="xp-notes"><li>Overseeing technical infrastructure and digital IT support operations.</li></ul></div>
+            <span class="xp-loc">Batam</span>
+          </li>
+          <li class="xp-row">
+            <span class="xp-period">January 2022 - December 2022</span>
+            <div class="xp-main"><h3>Mobile Engineer</h3><p class="xp-co">PT. Okejek Kreasi Indonesia</p><ul class="xp-notes"><li>Developed core features for the Okejek ride-hailing app using Flutter & Dart.</li><li>Implemented real-time data handling, location tracking, and payment flows.</li></ul></div>
+            <span class="xp-loc">Malang</span>
+          </li>
+        </ol>
+
+        <p class="label xp-label">(Education)</p>
+        <ol class="xp-list">
+          <li class="xp-row">
+            <span class="xp-period">2016 - 2021</span>
+            <div class="xp-main"><h3>B.S. Informatics Engineering</h3><p class="xp-co">University of Muhammadiyah Malang (UMM)</p><ul class="xp-notes"><li>Software Engineering, Mobile Application Development, Algorithms, and Database Management.</li></ul></div>
+            <span class="xp-loc">Malang</span>
+          </li>
+        </ol>
+      </section>
     </div>
-  </section>
 
-  <!-- ======= About Section ======= -->
-  <section id="about">
-    <div class="container">
-      <div class="section-title">
-        <h2>About Me</h2>
-        <p>Crafting Seamless Mobile Experiences</p>
+    <!-- ======= Contact ======= -->
+    <section id="contact" class="contact">
+      <div class="dot-blob dot-blob-a" aria-hidden="true"></div>
+      <div class="dot-blob dot-blob-b" aria-hidden="true"></div>
+
+      <h2 class="contact-title"><span>Let's build</span><span class="contact-indent">your app</span></h2>
+
+      <div class="contact-actions">
+        <a href="https://wa.me/6285171115997" target="_blank" rel="noopener" class="pill pill-solid link-whatsapp"><i class="bi bi-whatsapp" aria-hidden="true"></i>Start a project</a>
+        <a href="mailto:adioktav1997@gmail.com" class="pill link-email"><i class="bi bi-envelope" aria-hidden="true"></i>Say hi</a>
       </div>
 
-      <div class="row gy-4">
-        <div class="col-lg-7">
-          <div class="glass-card h-100">
-            <h3 class="mb-3" style="font-size: 1.5rem;">Professional Background</h3>
-            <p style="color: var(--text-sub);" id="about-bio-p1">
-              I am a dedicated Mobile Engineer with a strong passion for developing elegant, efficient, and scalable mobile apps. Active in Flutter development since 2021, I specialize in crafting robust cross-platform applications following Clean Architecture principles and solid state management patterns including GetX, BLoC, and Cubit.
-            </p>
-            <p style="color: var(--text-sub);" class="mt-3" id="about-bio-p2">
-              From ride-hailing services like Okejek to enterprise Sales Force Automation (zestHub SFA) and official organization platforms like AyoPramuka Kwarnas, I turn Figma designs into pixel-perfect, high-performing code.
-            </p>
+      <footer class="contact-foot">
+        <p><span class="label-dark">Local time</span>Malang, ID <time class="js-clock">--:--</time></p>
+        <ul class="socials">
+          <li><a href="https://github.com/ricky-oktavio?tab=repositories" target="_blank" rel="noopener" class="link-github">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/ricky-oktavio-adi-pranata-b27aa61b8/" target="_blank" rel="noopener" class="link-linkedin">LinkedIn</a></li>
+          <li><a href="https://t.me/rckycrk" target="_blank" rel="noopener" class="link-telegram">Telegram</a></li>
+          <li><a href="https://wa.me/6285171115997" target="_blank" rel="noopener" class="link-whatsapp">WhatsApp</a></li>
+        </ul>
+        <p><span class="label-dark">Last updated</span><span class="js-updated">2026</span></p>
+        <p class="copyright">&copy; 2026 Ricky Oktavio Adi Pranata · <a href="admin.html">CMS</a></p>
+      </footer>
+    </section>
+  </main>
 
-            <ul class="about-info-list">
-              <li class="about-info-item"><i class="bi bi-geo-alt"></i> <span><strong>City:</strong> <span id="about-city">Malang, Indonesia</span></span></li>
-              <li class="about-info-item"><i class="bi bi-envelope"></i> <span><strong>Email:</strong> <a href="mailto:adioktav1997@gmail.com" id="about-email">adioktav1997@gmail.com</a></span></li>
-              <li class="about-info-item"><i class="bi bi-telephone"></i> <span><strong>Phone:</strong> <a href="tel:+6285171115997" id="about-phone">+6285171115997</a></span></li>
-              <li class="about-info-item"><i class="bi bi-mortarboard"></i> <span><strong>Degree:</strong> <span id="about-degree">B.S. Informatics Engineering</span></span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-lg-5">
-          <div class="row gy-4">
-            <div class="col-6">
-              <div class="glass-card metric-box">
-                <div class="metric-val" id="metric-exp-years">3+</div>
-                <div class="metric-title">Years Experience</div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="glass-card metric-box">
-                <div class="metric-val" id="metric-apps-shipped">7+</div>
-                <div class="metric-title">Apps Shipped</div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="glass-card metric-box">
-                <div class="metric-val" id="metric-clean-code">100%</div>
-                <div class="metric-title">Clean Code</div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="glass-card metric-box">
-                <div class="metric-val" id="metric-problem-solving">24/7</div>
-                <div class="metric-title">Problem Solving</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= Tech Stack Section ======= -->
-  <section id="skills">
-    <div class="container">
-      <div class="section-title">
-        <h2>Tech Stack</h2>
-        <p>Core Technologies & Skills</p>
-      </div>
-
-      <div class="tech-grid" id="skills-container">
-        <div class="tech-card">
-          <div class="tech-icon"><i class="bi bi-phone"></i></div>
-          <div class="tech-info">
-            <h4>Flutter Framework</h4>
-            <p>Cross-platform iOS & Android Apps</p>
-          </div>
-        </div>
-
-        <div class="tech-card">
-          <div class="tech-icon"><i class="bi bi-code-slash"></i></div>
-          <div class="tech-info">
-            <h4>Dart Programming</h4>
-            <p>Object-Oriented & Asynchronous</p>
-          </div>
-        </div>
-
-        <div class="tech-card">
-          <div class="tech-icon"><i class="bi bi-diagram-3"></i></div>
-          <div class="tech-info">
-            <h4>BLoC / Cubit / GetX</h4>
-            <p>Predictable State Management</p>
-          </div>
-        </div>
-
-        <div class="tech-card">
-          <div class="tech-icon"><i class="bi bi-layers"></i></div>
-          <div class="tech-info">
-            <h4>Clean Architecture</h4>
-            <p>Domain, Data, Presentation Layers</p>
-          </div>
-        </div>
-
-        <div class="tech-card">
-          <div class="tech-icon"><i class="bi bi-cloud-arrow-down"></i></div>
-          <div class="tech-info">
-            <h4>RESTful API & JSON</h4>
-            <p>Dio, Http, Dynamic Payloads</p>
-          </div>
-        </div>
-
-        <div class="tech-card">
-          <div class="tech-icon"><i class="bi bi-figma"></i></div>
-          <div class="tech-info">
-            <h4>Figma to Flutter UI</h4>
-            <p>Pixel-perfect responsive design</p>
-          </div>
-        </div>
-
-        <div class="tech-card">
-          <div class="tech-icon"><i class="bi bi-git"></i></div>
-          <div class="tech-info">
-            <h4>Git Version Control</h4>
-            <p>GitHub, GitFlow, Collaboration</p>
-          </div>
-        </div>
-
-        <div class="tech-card">
-          <div class="tech-icon"><i class="bi bi-database"></i></div>
-          <div class="tech-info">
-            <h4>Firebase & Local DB</h4>
-            <p>Push Notification, Hive, SQLite</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= Resume / Experience Section ======= -->
-  <section id="resume">
-    <div class="container">
-      <div class="section-title">
-        <h2>Experience</h2>
-        <p>Career & Education Timeline</p>
-      </div>
-
-      <div class="row gy-5">
-        <div class="col-lg-6">
-          <h3 class="mb-4 text-gradient" style="font-size: 1.5rem; color: var(--accent-cyan);">Work Experience</h3>
-          <div class="timeline-box" id="experience-timeline-container">
-            
-            <div class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content">
-                <h4 class="timeline-title">Mobile Engineer</h4>
-                <div class="timeline-subtitle">PT. Rahadyan Integrasi Nusantara • Tasikmalaya</div>
-                <span class="timeline-date">August 2024 - Present</span>
-                <ul class="timeline-list">
-                  <li>Building and scaling Android and iOS mobile applications using Flutter framework.</li>
-                  <li>Integrating complex REST APIs and optimizing network data processing.</li>
-                  <li>Translating Figma design systems into responsive, fluid UI components.</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content">
-                <h4 class="timeline-title">Mobile Engineer</h4>
-                <div class="timeline-subtitle">PT. Asaba Computer Centre • Jakarta</div>
-                <span class="timeline-date">November 2022 - Present</span>
-                <ul class="timeline-list">
-                  <li>Developing enterprise-grade cross-platform apps using Flutter & Clean Architecture.</li>
-                  <li>Executing complex state management solutions (BLoC, Cubit, GetX).</li>
-                  <li>Ensuring seamless API communication and high app performance across devices.</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content">
-                <h4 class="timeline-title">Managing Director & IT Support</h4>
-                <div class="timeline-subtitle">PT. Jlima Digital Indonesia • Batam</div>
-                <span class="timeline-date">August 2022 - Present</span>
-                <ul class="timeline-list">
-                  <li>Overseeing technical infrastructure and digital IT support operations.</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content">
-                <h4 class="timeline-title">Mobile Engineer</h4>
-                <div class="timeline-subtitle">PT. Okejek Kreasi Indonesia • Malang</div>
-                <span class="timeline-date">January 2022 - October 2022</span>
-                <ul class="timeline-list">
-                  <li>Developed core features for Okejek online transportation app using Flutter & Dart.</li>
-                  <li>Implemented real-time data handling, location tracking, and payment flows.</li>
-                </ul>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <h3 class="mb-4 text-gradient" style="font-size: 1.5rem; color: var(--accent-violet);">Education</h3>
-          <div class="timeline-box">
-            
-            <div class="timeline-item">
-              <span class="timeline-dot" style="background: var(--accent-violet); box-shadow: 0 0 10px var(--accent-violet);"></span>
-              <div class="timeline-content">
-                <h4 class="timeline-title">Bachelor of Science in Informatics Engineering</h4>
-                <div class="timeline-subtitle">University of Muhammadiyah Malang (UMM)</div>
-                <span class="timeline-date">2016 - 2021</span>
-                <p style="font-size: 0.9rem; color: var(--text-sub);">
-                  Focused on Software Engineering, Mobile Application Development, Algorithms, and Database Management.
-                </p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= Portfolio Section ======= -->
-  <section id="portfolio">
-    <div class="container">
-      <div class="section-title">
-        <h2>Portfolio</h2>
-        <p>Featured Projects & Products</p>
-      </div>
-
-      <ul class="portfolio-filters" id="portfolio-flters">
-        <li data-filter="*" class="filter-active">All Projects</li>
-        <li data-filter=".filter-app">Mobile Apps</li>
-        <li data-filter=".filter-web">Web & Backend</li>
-      </ul>
-
-      <div class="row gy-4 portfolio-container" id="portfolio-grid-container">
-        
-        <!-- Project 1: Okejek -->
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <div class="portfolio-img-box">
-              <img src="assets/img/portfolio/my/okjek.png" alt="Okejek App">
-            </div>
-            <div class="portfolio-info-box">
-              <div>
-                <h4>Okejek App</h4>
-                <p>Online transportation, delivery, and digital services platform.</p>
-                <div class="portfolio-tags">
-                  <span class="tag-badge">Flutter</span>
-                  <span class="tag-badge">GetX</span>
-                  <span class="tag-badge">REST API</span>
-                  <span class="tag-badge">Maps</span>
-                </div>
-              </div>
-              <div class="portfolio-links-box">
-                <a href="assets/img/portfolio/my/okjek.png" class="portfolio-lightbox btn-icon-link" title="Okejek App"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://play.google.com/store/apps/details?id=id.okejack.okejackapp&hl=in&gl=US" target="_blank" class="btn-icon-link" title="Google Play Store"><i class="bi bi-box-arrow-up-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2: zestHub SFA -->
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <div class="portfolio-img-box">
-              <img src="assets/img/portfolio/my/sfa.png" alt="zestHub SFA">
-            </div>
-            <div class="portfolio-info-box">
-              <div>
-                <h4>zestHub SFA</h4>
-                <p>Sales Force Automation system for Sinarmas Distribusi Nusantara (SDN).</p>
-                <div class="portfolio-tags">
-                  <span class="tag-badge">Flutter</span>
-                  <span class="tag-badge">Clean Arch</span>
-                  <span class="tag-badge">BLoC</span>
-                  <span class="tag-badge">Enterprise</span>
-                </div>
-              </div>
-              <div class="portfolio-links-box">
-                <a href="assets/img/portfolio/my/sfa.png" class="portfolio-lightbox btn-icon-link" title="zestHub SFA"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://play.google.com/store/apps/details?id=com.zesthub.sfa" target="_blank" class="btn-icon-link" title="Google Play Store"><i class="bi bi-box-arrow-up-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3: AyoPramuka Kwarnas -->
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <div class="portfolio-img-box">
-              <img src="assets/img/portfolio/my/ayopramuka.png" alt="AyoPramuka Kwarnas">
-            </div>
-            <div class="portfolio-info-box">
-              <div>
-                <h4>AyoPramuka Kwarnas</h4>
-                <p>Official communication and community app for Gerakan Pramuka Indonesia.</p>
-                <div class="portfolio-tags">
-                  <span class="tag-badge">Flutter</span>
-                  <span class="tag-badge">Community</span>
-                  <span class="tag-badge">Social API</span>
-                </div>
-              </div>
-              <div class="portfolio-links-box">
-                <a href="assets/img/portfolio/my/ayopramuka.png" class="portfolio-lightbox btn-icon-link" title="AyoPramuka"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://play.google.com/store/apps/details?id=id.pramuka.ayosatu.app&hl=id" target="_blank" class="btn-icon-link" title="Google Play Store"><i class="bi bi-box-arrow-up-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4: J5Store Marketplace -->
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app filter-web">
-          <div class="portfolio-wrap">
-            <div class="portfolio-img-box">
-              <img src="assets/img/portfolio/my/j5store.png" alt="J5Store Marketplace">
-            </div>
-            <div class="portfolio-info-box">
-              <div>
-                <h4>J5Store Marketplace</h4>
-                <p>Complete mobile marketplace solution for e-commerce shopping.</p>
-                <div class="portfolio-tags">
-                  <span class="tag-badge">Flutter</span>
-                  <span class="tag-badge">E-Commerce</span>
-                  <span class="tag-badge">GitHub</span>
-                </div>
-              </div>
-              <div class="portfolio-links-box">
-                <a href="assets/img/portfolio/my/j5store.png" class="portfolio-lightbox btn-icon-link" title="J5Store Marketplace"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/rickydevs1/j5store-fe" target="_blank" class="btn-icon-link" title="GitHub Repository"><i class="bi bi-github"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 5: Al-Quran Mobile -->
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <div class="portfolio-img-box">
-              <img src="assets/img/portfolio/my/alquran.png" alt="Al-Quran Mobile">
-            </div>
-            <div class="portfolio-info-box">
-              <div>
-                <h4>Al-Quran Mobile</h4>
-                <p>Digital Islamic Quran mobile app with audio recitation & translations.</p>
-                <div class="portfolio-tags">
-                  <span class="tag-badge">Flutter</span>
-                  <span class="tag-badge">Audio API</span>
-                  <span class="tag-badge">Offline DB</span>
-                </div>
-              </div>
-              <div class="portfolio-links-box">
-                <a href="assets/img/portfolio/my/alquran.png" class="portfolio-lightbox btn-icon-link" title="Al-Quran Mobile"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/rickydevs1/alquran" target="_blank" class="btn-icon-link" title="GitHub Repository"><i class="bi bi-github"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 6: Chat App -->
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <div class="portfolio-img-box">
-              <img src="assets/img/portfolio/my/chat.png" alt="Chat Application">
-            </div>
-            <div class="portfolio-info-box">
-              <div>
-                <h4>Chat Application</h4>
-                <p>Real-time messaging mobile application interface.</p>
-                <div class="portfolio-tags">
-                  <span class="tag-badge">Flutter</span>
-                  <span class="tag-badge">Firebase</span>
-                  <span class="tag-badge">Realtime</span>
-                </div>
-              </div>
-              <div class="portfolio-links-box">
-                <a href="assets/img/portfolio/my/chat.png" class="portfolio-lightbox btn-icon-link" title="Chat App"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/rickydevs1/chat_apps" target="_blank" class="btn-icon-link" title="GitHub Repository"><i class="bi bi-github"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= Contact Section ======= -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-title">
-        <h2>Contact</h2>
-        <p>Get In Touch With Me</p>
-      </div>
-
-      <div class="row gy-4">
-        <div class="col-md-6 col-lg-3">
-          <div class="contact-card">
-            <div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
-            <h3>Location</h3>
-            <p>Malang City, East Java, Indonesia</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="contact-card">
-            <div class="contact-icon"><i class="bi bi-envelope-fill"></i></div>
-            <h3>Email</h3>
-            <a href="mailto:adioktav1997@gmail.com">adioktav1997@gmail.com</a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="contact-card">
-            <div class="contact-icon"><i class="bi bi-whatsapp"></i></div>
-            <h3>WhatsApp / Call</h3>
-            <a href="https://wa.me/6285171115997" target="_blank">+62 851-7111-5997</a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="contact-card">
-            <div class="contact-icon"><i class="bi bi-share-fill"></i></div>
-            <h3>Social Profiles</h3>
-            <div class="social-links justify-content-center mt-2">
-              <a href="https://github.com/ricky-oktavio?tab=repositories" target="_blank" class="social-icon"><i class="bi bi-github"></i></a>
-              <a href="https://www.linkedin.com/in/ricky-oktavio-adi-pranata-b27aa61b8/" target="_blank" class="social-icon"><i class="bi bi-linkedin"></i></a>
-              <a href="https://t.me/rckycrk" target="_blank" class="social-icon"><i class="bi bi-telegram"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= Footer ======= -->
-  <footer>
-    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
-      <p class="m-0">&copy; 2026 <strong>Ricky Oktavio Adi Pranata</strong>. All Rights Reserved.</p>
-      <a href="admin.html" class="btn-glass py-1 px-3" style="font-size: 0.8rem;"><i class="bi bi-gear-fill me-1"></i> Admin CMS</a>
-    </div>
-  </footer>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  <!-- Dynamic Portfolio Live Sync Renderer -->
   <script type="module" src="assets/js/dynamic-portfolio.js"></script>
 </body>
 
