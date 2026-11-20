@@ -17,9 +17,9 @@ import {
 const DEFAULT_PORTFOLIO_DATA = {
   profile: {
     fullName: "Ricky Oktavio Adi Pranata",
-    headline: "Senior Mobile Engineer • Flutter & Dart Specialist",
+    headline: "Senior Mobile & Full-stack Engineer • Flutter, Web, Backend",
     statusBadge: "Available for Freelance & Full-time",
-    bio: "Mobile engineer in Malang, Indonesia. I've built Flutter apps for iOS and Android since 2020, using Clean Architecture with BLoC and GetX.",
+    bio: "Mobile and full-stack engineer in Malang, Indonesia. I've built Flutter apps for iOS and Android since 2020, and I build the web and backend behind them too.",
     bioP2: "From ride-hailing services like Okejek to enterprise Sales Force Automation (zestHub SFA) and official organization platforms like AyoPramuka Kwarnas, I turn Figma designs into Flutter code.",
     location: "Malang, Indonesia",
     email: "adioktav1997@gmail.com",

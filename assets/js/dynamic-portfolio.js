@@ -19,9 +19,9 @@ const safeUrl = (v) => /^(https?:\/\/|mailto:|tel:|data:image\/|assets\/)/i.test
 const DEFAULT_DATA = {
   profile: {
     fullName: "Ricky Oktavio Adi Pranata",
-    headline: "Senior Mobile Engineer • Flutter & Dart Specialist",
+    headline: "Senior Mobile & Full-stack Engineer • Flutter, Web, Backend",
     statusBadge: "Available for Freelance & Full-time",
-    bio: "Mobile engineer in Malang, Indonesia. I've built Flutter apps for iOS and Android since 2020, using Clean Architecture with BLoC and GetX.",
+    bio: "Mobile and full-stack engineer in Malang, Indonesia. I've built Flutter apps for iOS and Android since 2020, and I build the web and backend behind them too.",
     location: "Malang City, East Java, Indonesia",
     email: "adioktav1997@gmail.com",
     phone: "+6285171115997",

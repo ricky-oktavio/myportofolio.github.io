@@ -1,6 +1,6 @@
 # Brand Guidelines: Ricky Oktavio Adi Pranata
 
-Personal brand for a Senior Mobile Engineer (Flutter & Dart).
+Personal brand for a senior mobile and full-stack engineer (Flutter first, plus web, backend and some DevOps).
 Source of truth for visuals is `assets/css/site.css` `:root` (public site). `assets/css/style.css` still styles `admin.html` only.
 
 ## Direction: "Pixel editorial"
