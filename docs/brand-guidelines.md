@@ -53,7 +53,7 @@ Rules: one accent per view; lime only on black; no gradients between accents.
 - **Pixel border**: 4 hard box-shadows of `--px` (3px) = notched corners. Used on chips and the notification.
 - **Pixel sprites**: drawn from string maps in `main.js` (`#` ink, `a` accent). Add new ones there.
 - **Halftone**: hero photo rendered as dots on canvas; contact blobs are CSS dot gradients.
-- **Duotone work images**: grayscale + cobalt multiply; real colors on hover/focus.
+- **Work images**: real colors; a slow ease-out zoom (1.08x) on hover/focus.
 - **Sheet**: paper section with large radius (`--sheet-r`) floating on black.
 - No glassmorphism, no glow, no soft shadows.
 
